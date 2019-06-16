@@ -1,0 +1,43 @@
+import { TextObject } from './text-object';
+import { Url } from './url';
+import { SeriesSummary } from './series-summary';
+import { ComicSummary } from './comic-summary';
+import { ComicDate } from './comic-date';
+import { ComicPrice } from './comic-price';
+import { Image } from './image';
+import { CreatorList } from './creator-list';
+import { CharacterList } from './character-list';
+import { StoryList } from './story-list';
+import { EventList } from './event-list';
+
+export interface Comic {
+  id: number;
+  digitalId: number;
+  title: string;
+  issueNumber: number;
+  variantDescription: string;
+  description: string;
+  modified: string;
+  isbn: string;
+  upc: string;
+  diamondCode: string;
+  ean: string;
+  issn: string;
+  format: string;
+  pageCount: number;
+  textObjects: Array<TextObject>;
+  resourceURI: string;
+  urls: Array<Url>;
+  series: SeriesSummary;
+  variants: Array<ComicSummary>;
+  collections: Array<ComicSummary>;
+  collectedIssues: Array<ComicSummary>;
+  dates: Array<ComicDate>;
+  prices: Array<ComicPrice>;
+  thumbnail: Image;
+  images: Array<Image>;
+  creators: CreatorList;
+  characters: CharacterList;
+  stories: StoryList;
+  events: EventList;
+}
